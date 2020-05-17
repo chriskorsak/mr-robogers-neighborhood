@@ -1,5 +1,5 @@
 //business logic
-function mrRobogerCounts(inputValue) {
+function mrRobogerCounts(inputValue) { 
   var numbers = [];
   for (let index = 0; index <= inputValue; index+=1) {
     numbers.push(index);
@@ -30,30 +30,37 @@ $(document).ready(function() {
   $("form#mr-roboger").submit(function() {
     event.preventDefault();
     var inputValue = parseInt($("#input1").val()); //gets value from form input 1
-    var output = mrRobogerCounts(inputValue); // function that counts from 0 to user input number
+    if (inputValue === 12321) {
+      $("span#message").text("You picked the magic number. Bravo!");
+      $("span#message").addClass("magic-number");
+    } else {
+      var output = mrRobogerCounts(inputValue); // function that counts from 0 to user input number
 
-    if (output[3]) {
-      output[1] = "Beep!";
-      output[2] = "Boop!";
-      output[3] = "Won't you be my neighbor?"
-    } else if (output[2]) {
-      output[1] = "Beep!";
-      output[2] = "Boop!";
-    } else if (output[1]) {
-      output[1] = "Beep!"; 
+      if (output[3]) {
+        output[1] = "Beep!";
+        output[2] = "Boop!";
+        output[3] = "Won't you be my neighbor?"
+      } else if (output[2]) {
+        output[1] = "Beep!";
+        output[2] = "Boop!";
+      } else if (output[1]) {
+        output[1] = "Beep!"; 
+      } 
+      var contains1 = inputContains1(inputValue); //function tests for 1 in user input
+      if (contains1 === true) {
+        output = "Beep!"
+      }
+      var contains2 = inputContains2(inputValue); //function tests for 2 in user input
+      if (contains2 === true) {
+        output = "Boop!"
+      }
+      var contains3 = inputContains3(inputValue); //function tests for 3 in user input
+      if (contains3 === true) {
+        output = "Won't you be my neighbor?"
+      }
+
+      $("span#message").removeClass("magic-number");
     } 
-    var contains1 = inputContains1(inputValue); //function tests for 1 in user input
-    if (contains1 === true) {
-      output = "Beep!"
-    }
-    var contains2 = inputContains2(inputValue); //function tests for 2 in user input
-    if (contains2 === true) {
-      output = "Boop!"
-    }
-    var contains3 = inputContains3(inputValue); //function tests for 3 in user input
-    if (contains3 === true) {
-      output = "Won't you be my neighbor?"
-    }
 
     $("span#message").text(output);
     $("div#output").show();
