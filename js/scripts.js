@@ -18,6 +18,12 @@ function inputContains2(inputValue) {
   var contains2 = userInputArray.includes("2")
   return contains2;
 }
+function inputContains3(inputValue) {
+  var userInputString = inputValue.toString(); 
+  var userInputArray = userInputString.split(''); // split user input to array
+  var contains3 = userInputArray.includes("3")
+  return contains3;
+}
 
 //user interface logic
 $(document).ready(function() {
@@ -43,6 +49,10 @@ $(document).ready(function() {
     var contains2 = inputContains2(inputValue); //function tests for 2 in user input
     if (contains2 === true) {
       output = "Boop!"
+    }
+    var contains3 = inputContains3(inputValue); //function tests for 3 in user input
+    if (contains3 === true) {
+      output = "Won't you be my neighbor?"
     }
 
     $("span#message").text(output);
