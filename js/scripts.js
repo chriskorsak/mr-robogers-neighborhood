@@ -6,12 +6,17 @@ function mrRobogerCounts(inputValue) {
   }
   return numbers;
 }
-
 function inputContains1(inputValue) {
   var userInputString = inputValue.toString(); 
   var userInputArray = userInputString.split(''); // split user input to array
-  var includes1 = userInputArray.includes("1")
-  return includes1;
+  var contains1 = userInputArray.includes("1")
+  return contains1;
+}
+function inputContains2(inputValue) {
+  var userInputString = inputValue.toString(); 
+  var userInputArray = userInputString.split(''); // split user input to array
+  var contains2 = userInputArray.includes("2")
+  return contains2;
 }
 
 //user interface logic
@@ -35,6 +40,11 @@ $(document).ready(function() {
     if (contains1 === true) {
       output = "Beep!"
     }
+    var contains2 = inputContains2(inputValue); //function tests for 2 in user input
+    if (contains2 === true) {
+      output = "Boop!"
+    }
+
     $("span#message").text(output);
     $("div#output").show();
     $("#input1").val(""); //clear out input 1 so user doesn't have to delete.
