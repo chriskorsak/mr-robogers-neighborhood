@@ -1,5 +1,5 @@
 //business logic
-function mrRoboger(inputValue) {
+function mrRobogerCounts(inputValue) {
   var numbers = [];
   for (let index = 0; index <= inputValue; index+=1) {
     numbers.push(index);
@@ -7,16 +7,19 @@ function mrRoboger(inputValue) {
   return numbers;
 }
 
-
-
-
+function inputContains1(inputValue) {
+  var userInputString = inputValue.toString(); 
+  var userInputArray = userInputString.split(''); // split user input to array
+  var includes1 = userInputArray.includes("1")
+  return includes1;
+}
 
 //user interface logic
 $(document).ready(function() {
   $("form#mr-roboger").submit(function() {
     event.preventDefault();
-    var inputValue = parseInt($("#input1").val()); //get value from form input 1
-    var output = mrRoboger(inputValue);
+    var inputValue = parseInt($("#input1").val()); //gets value from form input 1
+    var output = mrRobogerCounts(inputValue); // function that counts from 0 to user input number
 
     if (output[3]) {
       output[1] = "Beep!";
@@ -27,8 +30,11 @@ $(document).ready(function() {
       output[2] = "Boop!";
     } else if (output[1]) {
       output[1] = "Beep!"; 
-    }  
-
+    } 
+    var contains1 = inputContains1(inputValue); //function tests for 1 in user input
+    if (contains1 === true) {
+      output = "Beep!"
+    }
     $("span#message").text(output);
     $("div#output").show();
     $("#input1").val(""); //clear out input 1 so user doesn't have to delete.
