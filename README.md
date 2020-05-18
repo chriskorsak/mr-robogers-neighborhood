@@ -10,6 +10,10 @@ _This web application takes a number from a user and returns a range of numbers 
 
 * Spec: A user should be able to enter a new number and see new results over and over.
 
+* Spec: If the inputted number is 12321, the output is "You picked the magic number!" Added effects will also be present.
+  * Input: "12321"
+  * Output: "You picked the magic number!" The background color will also change and an image of a robot will display.
+
 * Spec: The program returns a range of numbers from 0 to the user's inputed number.
   * Input: "4"
   * Output: "0", "1", "2", "3", "4"
@@ -28,11 +32,7 @@ _This web application takes a number from a user and returns a range of numbers 
 
 * Spec: If the inputted number contains a 3, the output is "Won't you be my neighbor?"
   * Input: "13"
-  * Output: "Won't you be my neighbor?"
-
-* Spec: If the inputted number is 12321, the output is "You picked the magic number!" Added effects will also be present.
-  * Input: "12321"
-  * Output: "You picked the magic number!" The background color will also change and an image of a magic wand and hat will display.  
+  * Output: "Won't you be my neighbor?"  
 
 ## Setup/Installation Requirements
 
