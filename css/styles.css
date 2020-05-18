@@ -1,9 +1,26 @@
+.interface {
+  margin-top: 25px;
+  padding: 2%;
+  background-color: rgb(230, 230, 230);
+  border-radius: 10px;
+}
+
 #output {
   display: none;
+}
+
+.message {
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: bold;
+  font-size: 120%;
 }
 
 .magic-number {
   background-color: red;
   color: white;
   font-size: 200%;
+}
+
+.magic-photo {
+  display: none;
 }
