@@ -24,3 +24,8 @@
 .magic-photo {
   display: none;
 }
+
+h1, label {
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: bold;
+}
