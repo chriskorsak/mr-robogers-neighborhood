@@ -2,20 +2,18 @@
 function mrRobogerCounts(inputValue) { 
   var numbers = [];
   for (let index = 0; index <= inputValue; index += 1) {
-    numbers.push(index.toString());
-  }
-  message = numbers.map(function(number) {
-    if (number.includes("3")) {
-      return number = "won't you be my neighbor?";
-    } else if (number.includes("2")) {
-      return number = "boop";
-    } else if (number.includes("1")) {
-      return number = "beep";
-    } else {
-      return number;
+    var exception = index.toString();
+    if (exception.includes("3")) {
+      numbers.push("Won't you be my neighbor?")
+    } else if (exception.includes("2")) {
+      numbers.push("Boop!")
+    } else if (exception.includes("1")) {
+      numbers.push("Beep!")
+    }else {
+      numbers.push(index);
     }
-  });
-  return message;
+  }
+  return numbers;
 }
 
 //user interface logic
