@@ -5,12 +5,12 @@ function mrRobogerCounts(inputValue) {
     numbers.push(index.toString());
   }
   message = numbers.map(function(number) {
-    if (number.includes("1")) {
-      return number = "beep";
+    if (number.includes("3")) {
+      return number = "won't you be my neighbor?";
     } else if (number.includes("2")) {
       return number = "boop";
-    } else if (number.includes("3")) {
-      return number = "won't you be my neighbor?";
+    } else if (number.includes("1")) {
+      return number = "beep";
     } else {
       return number;
     }
@@ -28,7 +28,7 @@ $(document).ready(function() {
       $("span.message").addClass("magic-number");
       $("img.magic-photo").show();
     } else {
-        var output = mrRobogerCounts(inputValue); // function that counts from 0 to user input number
+        var output = mrRobogerCounts(inputValue); // function that counts from 0 to user input number with custom messages
         $("img.magic-photo").hide(); //only hides if magic number before
         $("span.message").removeClass("magic-number"); //only remove if magic number before
       } 
